@@ -1,0 +1,112 @@
+$status-color: #9D9C8A;
+$fourth-color: #D8E575;
+$first-color: #E35858;
+$third-color: #8FB4EF;
+$second-color: #95CA95;
+$darken-value: 10%;
+$lighten-value: 20%;
+
+@mixin color_square($number) {
+  background-color: $number;
+  box-shadow: inset 0 0 0 10px darken($number, $darken-value);
+}
+
+@mixin status_field() {
+  border-radius: 50%;
+  font-size: 20px;
+  width: 20%;
+  top: 12vh;
+  cursor: pointer;
+}
+
+@mixin status_info($color) {
+  border: 10px solid darken($status-color, $darken-value);
+  height: 100%;
+  width: 15vw;
+  background-color: $color;
+}
+
+.simon__game {
+  font-family: 'Acme', sans-serif;
+  background: url("../images/background-image.jpg")
+    center
+    center
+    no-repeat
+    fixed;
+  height: 100vh;
+  width: 100vw;
+  .simon__game__status {
+    background-color: $status-color;
+    box-shadow: inset 0 0 0 10px darken($status-color, $darken-value);
+    position: absolute;
+    width: 60vw;
+    height: 30vh;
+    top: 55vh;
+    left: 20vw;
+    .status__object {
+      background-color: lighten($status-color, $lighten-value);
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    .status__title {
+      font-size: 24px;
+      width: 20vw;
+      border-radius: 40%;
+      top: 4vh;
+      text-decoration: underline;
+    }
+    .status__countInfo {
+      font-size: 24px;
+      width: 10vw;
+      border-radius: 40%;
+      top: 15vh;
+    }
+    .status__startInfo {
+      @include status_info($first-color);
+      right: 50vw;
+    }
+    .status__strictInfo {
+      @include status_info($first-color);
+      left: 45vw;
+    }
+    .status__start {
+      @include status_field();
+      right: 45vw;
+    }
+    .status__strict {
+      @include status_field();
+      left: 45vw;
+    }
+  }
+  .simon__game__color {
+    position: absolute;
+    border: 0;
+    width: 30vw;
+    height: 20vh;
+  }
+  .simon__game__color-unClickable {
+    pointer-events: none;
+  }
+  .simon__game__color-first {
+    @include color_square($first-color);
+    top: 15vh;
+    left: 20vw;
+  }
+  .simon__game__color-second {
+    @include color_square($second-color);
+    top: 15vh;
+    right: 20vw;
+  }
+  .simon__game__color-third {
+    @include color_square($third-color);
+    bottom: 45vh;
+    left: 20vw;
+  }
+  .simon__game__color-fourth {
+    @include color_square($fourth-color);
+    bottom: 45vh;
+    right: 20vw;
+  }
+}

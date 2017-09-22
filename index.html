@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simon Game - Robert Rochon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css'>
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Acme'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+  <div class="simon__game">
+    <button id="first" class="simon__game__color simon__game__color-unClickable simon__game__color-first">
+    </button>
+    <button id="second" class="simon__game__color simon__game__color-unClickable simon__game__color-second">
+    </button>
+    <div class="simon__game__status center-align">
+      <p class="status__object status__title">Simon</p>
+      <p class="status__object status__countInfo">0</p>
+      <p class="status__object status__startInfo"></p>
+      <p class="status__object status__strictInfo"></p>
+      <p class="status__object status__start">Start</p>
+      <p class="status__object status__strict">Strict</p>
+    </div>
+    <button id="third" class="simon__game__color simon__game__color-unClickable simon__game__color-third">
+    </button>
+    <button id="fourth" class="simon__game__color simon__game__color-unClickable simon__game__color-fourth">
+    </button>
+  </div>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js'></script>
+  <script src="js/index.js"></script>
+
+</body>
+
+</html>
