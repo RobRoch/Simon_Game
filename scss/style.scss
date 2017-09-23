@@ -13,7 +13,7 @@ $lighten-value: 20%;
 
 @mixin status_field() {
   border-radius: 50%;
-  font-size: 20px;
+  font-size: 2vw;
   width: 20%;
   top: 12vh;
   cursor: pointer;
@@ -31,7 +31,6 @@ $lighten-value: 20%;
   background: url("../images/background-image.jpg")
     center
     center
-    no-repeat
     fixed;
   height: 100vh;
   width: 100vw;
@@ -51,14 +50,14 @@ $lighten-value: 20%;
       margin: 0 auto;
     }
     .status__title {
-      font-size: 24px;
+      font-size: 3vw;
       width: 20vw;
       border-radius: 40%;
       top: 4vh;
       text-decoration: underline;
     }
     .status__countInfo {
-      font-size: 24px;
+      font-size: 3vw;
       width: 10vw;
       border-radius: 40%;
       top: 15vh;

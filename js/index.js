@@ -65,7 +65,6 @@ $(document).ready(function() {
   $(".status__start").click(function() {
     if (!simon.isStarted) {
       startGame();
-      clickable();
     } else {
       resetGame();
       unclickable();
@@ -122,10 +121,8 @@ $(document).ready(function() {
       fourthSound.play();
     }
     $(square).addClass(bounce);
-    $(square).addClass(unClickable);
     setTimeout(function() {
       $(square).removeClass(bounce);
-      $(square).removeClass(unClickable);
     }, 800);
   }
 
@@ -138,8 +135,7 @@ $(document).ready(function() {
 
   //Check status every single move.
   function checkStatus(square, count) {
-    setTimeout(function() {
-      //25 wins game.
+      //20 wins game.
       if (simon.count > 20) {
         $(".status__title").text("You won!");
         resetGame();
@@ -168,12 +164,12 @@ $(document).ready(function() {
           //If it's not a strict mode, repeat.
           $(".status__title").text("Try again!");
           simon.playerSequence = [];
-          simonMoves();
+          unclickable();
+          simonMoves();  
           setTimeout(function() {
             $(".status__title").text("Simon");
           }, 4000);
         }
       }
-    }, 1000);
   }
 });
