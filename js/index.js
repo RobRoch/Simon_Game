@@ -17,6 +17,10 @@ $(document).ready(function() {
   var fourthSound = new Audio(
     "./audio/simonSound4.mp3"
   );
+  var failSound = new Audio(
+    "./audio/failSound.mp3"
+  );
+
 
   var simon = {
     isStarted: false,
@@ -152,6 +156,7 @@ $(document).ready(function() {
           simonMoves();
         }
       } else {
+        failSound.play();
         //If it's strict mode, you lose.
         if (simon.isStrict) {
           $(".status__title").text("You lost!");
